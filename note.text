@@ -1,0 +1,24 @@
+Response Data JSON format
+
+{
+  "id": "42429760557",
+  "user_id": "189290002",
+  "user_login": "x2twins",
+  "user_name": "x2Twins",
+  "game_id": "33214",
+  "game_name": "Fortnite",
+  "type": "live",
+  "title": "FNCS QUALIFIERS VIEWING PARTY | ALREADY QUALIFIED",
+  "viewer_count": 6369,
+  "started_at": "2021-06-18T08:05:38Z",
+  "language": "en",
+  "thumbnail_url": "https://static-cdn.jtvnw.net/previews-ttv/live_user_x2twins-{width}x{height}.jpg",
+  "tag_ids": [
+    "6ea6bca4-4712-4ab9-a906-e3336a9d8039",
+    "24cc3843-e288-43f9-9c35-50fe1571c341"
+  ],
+  "is_mature": false
+}
+
+--------------------------
+
