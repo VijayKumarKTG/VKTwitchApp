@@ -1,27 +1,27 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
+body {
   font-family: 'Nunito', sans-serif;
-  background-color: #977BFC;
+  background-color: #977bfc;
   color: #ffffff;
   text-align: center;
   padding: 20px;
 }
 
-ul{
+ul {
   list-style-type: none;
 }
 
-h1 img{
+h1 img {
   width: 40px;
   height: 40px;
 }
 
-main{
+main {
   background: #ffffff;
   color: #000000;
   margin: 50px 0px;
@@ -30,15 +30,102 @@ main{
   text-align: center;
 }
 
-.spinner{
-  width:40px;
-  height: 40px;
-  display: inline-block;
+.spinner {
+  width: 100%;
 }
 
-.stream__item{
+.sk-container {
+  box-shadow: 0 4px 10px 0 rgba(33, 33, 33, 0.15);
+  border-radius: 5px;
+  height: 200px;
   background: #ffffff;
-  box-shadow: 0.3px 0.3px 11px #dbdbdb, -0.3px -0.3px 11px #FFFFFF;
+  display: grid;
+  grid-template-columns: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sk-user {
+  margin: auto;
+}
+
+.sk-img {
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  background-color: #c4c4c48f;
+  position: relative;
+  overflow: hidden;
+  margin-left: 10px;
+}
+
+.sk-name {
+  background-color: #c4c4c48f;
+  border-radius: 10px;
+  height: 10px;
+  width: 100px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.sk-title {
+  border-radius: 10px;
+  height: 10px;
+  width: 200px;
+  background-color: #c4c4c48f;
+  position: relative;
+  overflow: hidden;
+}
+
+.sk-title-1 {
+  width: 150px;
+  margin-top: 3px;
+}
+
+.sk-count {
+  background-color: #c4c4c48f;
+  border-radius: 10px;
+  height: 10px;
+  width: 100px;
+  margin-top: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.sk-img::before,
+.sk-name::before,
+.sk-title::before,
+.sk-count::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: -150px;
+  top: 0;
+  height: 100%;
+  width: 150px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    #b6b6b6 50%,
+    transparent 100%
+  );
+  animation: load 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes load {
+  from {
+    left: -150px;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+.stream__item {
+  background: #ffffff;
+  box-shadow: 0.3px 0.3px 11px #dbdbdb, -0.3px -0.3px 11px #ffffff;
   color: #000000;
   padding: 30px;
   border-radius: 5px;
@@ -53,52 +140,52 @@ main{
 }
 
 @keyframes fadeIn {
-  0%{
+  0% {
     opacity: 0;
   }
-  50%{
+  50% {
     opacity: 0.5;
   }
-  100%{
+  100% {
     opacity: 1;
   }
 }
 
-.user{
+.user {
   text-align: center;
 }
 
-.user img{
+.user img {
   width: 80px;
   height: 80px;
-  border: 1px solid #977BFC;
+  border: 1px solid #977bfc;
   border-radius: 50%;
   padding: 5px;
 }
 
-.user p{
-  color: #977BFC;
+.user p {
+  color: #977bfc;
   font-weight: bold;
   font-size: 1.2rem;
 }
 
-.title{
+.title {
   font-weight: 600;
   text-decoration: none;
   color: #000;
   transition: all 0.5s linear;
 }
 
-.title:hover{
-  color: #977BFC;
+.title:hover {
+  color: #977bfc;
 }
 
-.viewer{
+.viewer {
   margin-top: 10px;
   font-size: 0.9rem;
 }
 
-.viewer span{
+.viewer span {
   background: #7a62df;
   color: #ffffff;
   border-radius: 15px;
@@ -106,24 +193,33 @@ main{
   font-weight: 600;
 }
 
-footer{
+footer {
   font-size: 0.7rem;
 }
 
-@media screen and (min-width: 600px){
-  .stream__item{
+@media screen and (min-width: 600px) {
+  .stream__item {
     grid-template-columns: 30% 70%;
     column-gap: 10px;
     text-align: left;
   }
+
+  .sk-container {
+    grid-template-columns: 30% 70%;
+  }
 }
 
-@media screen and
-  (prefers-reduced-motion: reduce), 
-  (update: slow) {
+@media screen and (prefers-reduced-motion: reduce), (update: slow) {
   * {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important; /* Hat tip Nick/cssremedy (https://css-tricks.com/revisiting-prefers-reduced-motion-the-reduced-motion-media-query/#comment-1700170) */
     transition-duration: 0.001ms !important;
+  }
+
+  .sk-img::before,
+  .sk-name::before,
+  .sk-title::before,
+  .sk-count::before {
+    animation: none;
   }
 }
